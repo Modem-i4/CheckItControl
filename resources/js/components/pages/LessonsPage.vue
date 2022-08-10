@@ -207,7 +207,7 @@ export default {
                 })
         },
         redirect (id) {
-            window.location.href = `/lessons/${id}?new`
+            window.location.href = `/lessons/${id}`
         },
         checkValidity() {
             this.valid = this.newItem.code.length > 3 &&

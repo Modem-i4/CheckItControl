@@ -24,6 +24,7 @@ Vue.component('lang-changer', require('./components/LangChanger').default);
 Vue.use(Vuetify);
 Vue.use(BootstrapVue);
 //Vue.prototype.$userId = document.querySelector("meta[name='user-id']").getAttribute('content');
+
 new Vue({
     i18n,
     vuetify : new Vuetify(),

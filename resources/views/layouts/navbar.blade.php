@@ -23,7 +23,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        @if(Auth::user()->hasRole("premium") && Auth::user()->school_id !== null)
+                        @if(Auth::user()->hasRole("premium"))
                         <a href="/groups" class="text-dark ml-2 d-flex">
                         @else
                         <a href="#" class="ml-2 d-flex text-decoration-none text-muted" style="cursor: default">

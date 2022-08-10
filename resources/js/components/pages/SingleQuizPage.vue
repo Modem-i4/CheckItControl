@@ -36,7 +36,9 @@
                                   :items="questions"
                                   :loading="loading"
                                   class="elevation-1"
-                                  item-key="key">
+                                  item-key="key"
+                                  :items-per-page="16"
+                                  hide-default-footer>
                         <template #item.question="{ item }">
                             <v-text-field v-model="item[0][0]" v-if="editing" @focus="addNewQuestionIfRequired(item)"/>
                             <span v-else>{{ item[0][0] }}</span>
@@ -71,7 +73,9 @@
                     <v-data-table :headers="headersDarts"
                                   :items="darts"
                                   :loading="loading"
-                                  class="elevation-1">
+                                  class="elevation-1"
+                                  :items-per-page="16"
+                                  hide-default-footer>
                         <template #item.question="{ item }">
                             <v-text-field v-model="item[0][0]" v-if="editing" @focus="addNewDartsIfRequired(item)"/>
                             <span v-else>{{ item[0][0] }}</span>
@@ -116,13 +120,13 @@ export default {
             editing: false,
             savingLoading: false,
             headersQuestions: [
-                { text: this.$t("Запитання [поставте __ на місці пропуску слова]"), value: 'question', sortable: false, width: "50%" },
-                { text: this.$t("Правильна відповідь"), value: 'trueAnswer',sortable: false, width: "20%"  },
-                { text: this.$t("Хибні відповіді"), value: 'falseAnswers', sortable: false, width: "30%"  }
+                { text: this.$t("Запитання [__ на місці пропуску слова]"), value: 'question', sortable: false, width: "50%" },
+                { text: this.$t("Правильна відповідь"), value: 'trueAnswer', align: 'center', sortable: false, width: "20%"  },
+                { text: this.$t("Хибні відповіді"), value: 'falseAnswers', align: 'center', sortable: false, width: "30%"  }
             ],
             headersDarts: [
-                { text: this.$t("Запитання"), value: 'question', sortable: false, width: "60%" },
-                { text: this.$t("Правильна відповідь"), value: 'trueAnswer',sortable: false, width: "40%"  },
+                { text: this.$t("Запитання"), value: 'question', sortable: false, width: "80%" },
+                { text: this.$t("Правильна відповідь"), value: 'trueAnswer', align: 'center',sortable: false, width: "20%"  },
             ],
         }
     },

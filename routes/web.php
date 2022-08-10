@@ -58,10 +58,13 @@ Route::prefix('api')->group(function () {
     Route::get('quizzes/darts/formatted/{id}', [QuizController::class, 'getDartsFormattedJSON']);
     Route::get('lessons', [LessonController::class, 'all']);
     Route::post('lessons', [LessonController::class, 'add']);
-    Route::get('lessons/quizStats/{id}', [LessonController::class, 'getQuizStats']);
     Route::get('lessons/{id}', [LessonController::class, 'get']);
-    Route::post('lessons/setQuizStats/{id}', [LessonController::class, 'setQuizStats']);
-    Route::post('lessons/setDartsStats/{id}', [LessonController::class, 'setDartsStats']);
+    Route::post('lessons/updStats/{id}', [LessonController::class, 'updStats']);
+    Route::get('lessons/lessonStatus/{id}', [LessonController::class, 'getLessonStatus']);
+    Route::get('lessons/studentStats/{id}', [LessonController::class, 'getStudentStats']);
+    Route::get('lessons/quizStats/{id}', [LessonController::class, 'getQuizStats']);
+    Route::post('lessons/setLessonStatus/{id}', [LessonController::class, 'setLessonStatus']);
+    Route::post('lessons/updStudentStatus/{id}', [LessonController::class, 'updStudentStatus']);
     Route::post('lessons/setStudentsStats/{id}', [LessonController::class, 'setStudentsStats']);
     Route::get('lessons/testStats/{id}', [LessonController::class, 'testStats']);
     Route::post('lessons/remove', [LessonController::class, 'remove']);

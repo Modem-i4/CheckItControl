@@ -11,6 +11,9 @@ class Lesson extends Model
     use HasFactory, Filterable;
     protected $casts = [
         'students' => 'array',
+        'QuizStats' => 'array',
+        'DartsStats' => 'array',
+        'StudentsStats' => 'array',
     ];
     public $timestamps = false;
 }
